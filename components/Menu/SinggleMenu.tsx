@@ -16,14 +16,16 @@ export const SinggleMenu = ({ devider, children }: SinggleMenu) => {
 
 interface SinggleMenuItem {
   title: string,  
-  icon: any
+  icon: any,
+  expand?: Boolean
 }
 
-export const SinggleMenuItem = ({ title, icon }: SinggleMenuItem) => {
+export const SinggleMenuItem = ({ title, icon, expand }: SinggleMenuItem) => {
+  const isExpandBlock = !expand ? 'inline-flex block gap-x-3 w-full rounded-xl' : 'inline-block rounded-full';
   return (
     <>
       {/* Singgle Menu Items */}
-      <li><a href="#" className="inline-flex block gap-x-3 px-2 py-4 hover:bg-gray-100 w-full rounded-xl">{ icon } <span>{ title }</span></a></li>
+      <li><a href="#" className={`${isExpandBlock} p-3 hover:bg-gray-100 `}>{ icon } {!expand ? <span>{ title }</span> : ''}</a></li>
     </>
   )
 }

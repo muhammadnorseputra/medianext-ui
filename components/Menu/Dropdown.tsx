@@ -21,27 +21,29 @@ export const Dropdown = ({ devider, children }: Dropdown) => {
 
 interface DropdownItem {
   title: string, 
-  children?: any
+  children?: any,
+  expand: Boolean
 }
 
-export const DropdownItem = ({ title, children }: DropdownItem) => {
+export const DropdownItem = ({ title, children, expand }: DropdownItem) => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
+
+  const isExpand = !expand ? 'w-full rounded-xl' : 'rounded-full';
 
   return (
     <>
       {/* Dropdown Items */}
       <li>
-        <button type="button" onClick={toggleDropdown} className="inline-flex justify-between items-center w-full px-2 py-3 hover:bg-gray-100 rounded-xl group">
+        <button type="button" onClick={toggleDropdown} className={`inline-flex justify-between items-center ${isExpand} p-3 hover:bg-gray-100 group`}>
           <FolderIcon className="w-6 h-6 text-gray-400"/>
-          <div className="flex-1 pl-5 text-left" style={{textAlign: 'left'}}>{title}</div>
-          <span className={`p-2 rounded-full group-hover:bg-blue-100 ${ dropdownOpen ? 'rotate-180' : 'rotate-0' } transition duration-200`}><ChevronDownIcon className="w-5 h-5 text-gray-400"/></span>
+          {!expand ? <div className="flex-1 pl-5 text-left" style={{textAlign: 'left'}}>{title}</div> : '' }
+          {!expand ? <span className={`p-2 rounded-full group-hover:bg-blue-100 ${ dropdownOpen ? 'rotate-180' : 'rotate-0' } transition duration-200`}><ChevronDownIcon className="w-5 h-5 text-gray-400"/></span> : ''}
         </button>
-        <ul className={`border-l border-gray-200 ml-5 pl-3 ${ dropdownOpen ? 'show' : 'hidden' } transition`}>
+        <ul className={`transition-all duration-800 border-l border-gray-200 ml-5 pl-3 overflow-y-auto ${ dropdownOpen ? 'max-h-[800px] opacity-1' : 'max-h-0 opacity-0' }`}>
           { children }
         </ul>
       </li>

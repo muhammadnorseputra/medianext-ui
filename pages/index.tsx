@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import type { NextPage } from 'next'
+import { useState } from 'react'
 import { XIcon, MenuIcon, SearchIcon, UserIcon, UsersIcon, ChatAltIcon, MoonIcon, ChevronDownIcon } from '@heroicons/react/outline'
 import { FbIcon, FigmaIcon, GithubIcon, IgIcon, TwitchIcon, TwitterIcon } from '@/components/Icons'
 import { Dropdown, DropdownItem, DropdownList } from '@/components/Menu/Dropdown'
@@ -7,6 +8,12 @@ import { SinggleMenu, SinggleMenuItem } from '@/components/Menu/SinggleMenu'
 import { Basic } from '@/components/Notification/Basic'
 
 const Home: NextPage = () => {
+  
+  const [isExpand, setIsExpand] = useState(false);
+  const toggle = () => {
+    setIsExpand(!isExpand);
+  };
+  const expanWidthSidebar = !isExpand ? 'w-[260px]' : 'w-[70px]';
   return (
     <div>
       <Head>
@@ -17,7 +24,7 @@ const Home: NextPage = () => {
       {/* Header */}
       <header className="flex bg-white border-b border-gray-200 relative text-gray-800 h-[60px] sticky">
         <div className="inline-flex items-center w-[230px] pl-3">
-          <button className="p-2 rounded-full hover:bg-gray-100"><MenuIcon className="w-6 h-6 text-gray-400"/></button> <span className="overflow-hidden whitespace-nowrap block ml-1 text-gray-700 text-xl">Medianext UI</span>
+          <button className="p-3 rounded-full hover:bg-gray-100" onClick={() => toggle()}><MenuIcon className="w-6 h-6 text-gray-400"/></button> <span className="overflow-hidden whitespace-nowrap block ml-1 text-gray-700 text-xl">Medianext UI</span>
         </div>
         <div className="px-6 inline-flex flex-1 items-center justify-between">
           <div>
@@ -39,17 +46,31 @@ const Home: NextPage = () => {
       {/* Main */}
       <main className="flex overflow-y-auto overflow-x-hidden h-[calc(100vh-60px)]">
         {/* Sidebar */}
-        <div className="hidden md:inline-flex flex-col justify-between w-[260px] border-r border-gray-200 sticky top-0">
-          <div className="overflow-y-auto overflow-x-hidden h-[calc(100vh-90px)] px-3 py-5">
+        <div className={`${expanWidthSidebar} hidden transition-all duration-800 md:inline-flex flex-col justify-between border-r border-gray-200 sticky top-0`}>
+          <div className="overflow-y-auto overflow-x-hidden px-3 py-5">
             {/* Dropdown Menu */}
             <Dropdown devider>
-              <DropdownItem title="Internet">
+              <DropdownItem title="Internet" expand={isExpand}>
                 <DropdownList title="Adsense"/>
                 <DropdownList title="Blogger"/>
                 <DropdownList title="Tips SEO"/>
                 <DropdownList title="Android"/>
               </DropdownItem>
-              <DropdownItem title="Proggramer">
+              <DropdownItem title="Proggramer" expand={isExpand}>
+                <DropdownList title="HTML5"/>
+                <DropdownList title="Css"/>
+                <DropdownList title="Javascript"/>
+                <DropdownList title="Vue Js"/>
+                <DropdownList title="React JS"/>
+              </DropdownItem>
+              <DropdownItem title="Proggramer" expand={isExpand}>
+                <DropdownList title="HTML5"/>
+                <DropdownList title="Css"/>
+                <DropdownList title="Javascript"/>
+                <DropdownList title="Vue Js"/>
+                <DropdownList title="React JS"/>
+              </DropdownItem>
+              <DropdownItem title="Proggramer" expand={isExpand}>
                 <DropdownList title="HTML5"/>
                 <DropdownList title="Css"/>
                 <DropdownList title="Javascript"/>
@@ -59,13 +80,14 @@ const Home: NextPage = () => {
             </Dropdown>
             {/* Basic Menu Items */}
             <SinggleMenu>
-              <SinggleMenuItem title="About" icon={<UsersIcon className="w-6 h-6 text-gray-400"/>}/>
-              <SinggleMenuItem title="Contact" icon={<ChatAltIcon className="w-6 h-6 text-gray-400"/>}/>
+              <SinggleMenuItem title="About" icon={<UsersIcon className="w-6 h-6 text-gray-400"/>} expand={isExpand}/>
+              <SinggleMenuItem title="Contact" icon={<ChatAltIcon className="w-6 h-6 text-gray-400"/>} expand={isExpand}/>
             </SinggleMenu>
           </div>
           {/* Sidebar Footer */}
-          <div className="inline-flex flex-col gap-y-3 h-[90px] p-5">
-            <ul className="inline-flex items-center justify-around">
+          <div className="inline-flex flex-col gap-y-3 h-[100px] p-5">
+            {!isExpand ?  
+            (<><ul className="inline-flex items-center justify-around">
               <li><a href="#" className="hover:underline">Sitemap</a></li>
               &bull;
               <li><a href="#" className="hover:underline">Disclaimer</a></li>
@@ -79,16 +101,19 @@ const Home: NextPage = () => {
               <li className="p-2 rounded-full hover:bg-gray-100"><a href="#"><IgIcon/></a></li>
               <li className="p-2 rounded-full hover:bg-gray-100"><a href="#"><TwitchIcon/></a></li>
               <li className="p-2 rounded-full hover:bg-gray-100"><a href="#"><TwitterIcon/></a></li>
-            </ul>
+            </ul></>)
+            : ''} 
           </div>
         </div>
         {/* Content */}
-        <div className="flex-1 w-[calc(100% - 260px)]">
+        <div className="flex-1">
           <Basic message="We come with the latest version 1.6, get this theme through our official site."/>
-          <div className="container-sm mx-auto">
-              <div className="bg-red-200 w-full h-screen">Mainfsadfasf</div>
-              <div className="bg-blue-200  h-screen">Sidebar</div>
+          <div className="container bg-red-300 h-screen">
+            <div className="flex max-w-[800px]">
+              <div>Content</div>
+              <div>Sidebar</div>
             </div>
+          </div>
         </div>
       </main>
     </div>
