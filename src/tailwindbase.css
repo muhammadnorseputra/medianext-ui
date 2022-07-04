@@ -1,3 +1,29 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.5em;
+}
+
+@layer utilities {
+	.br {
+		@apply border-b border-gray-200 pb-3 mb-3
+	}
+}
+
+@layer components {
+	.info {
+		@apply bg-blue-100
+	}
+	.danger {
+		@apply bg-red-100
+	}
+	.warning {
+		@apply bg-orange-100
+	}
+}

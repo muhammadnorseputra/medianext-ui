@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "css": "npx tailwindcss -i ./src/tailwindbase.css -o ./styles/globals.css --watch --minify"
+    "css": "npx tailwindcss -i src/tailwindbase.css -o styles/globals.css --watch --minify"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "next": "12.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
