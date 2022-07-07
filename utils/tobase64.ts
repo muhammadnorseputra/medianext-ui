@@ -1,0 +1,1 @@
+export default function toBase64 (str){ return typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str)}

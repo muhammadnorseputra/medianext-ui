@@ -22,9 +22,10 @@ export interface TsSinggleMenu {
 export interface TsSinggleMenuItem {
   title: string,  
   icon: any,
+  href: any,
   expand?: Boolean
 }
 
 export interface TsContentType {
-  children: any,  
+  children: any
 }
