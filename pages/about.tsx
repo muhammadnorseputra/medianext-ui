@@ -11,7 +11,7 @@ const About: NextPage = () => {
         <title>About - Medianext UI</title>
       </Head>
       <Content>
-        <div className="w-full md:max-w-[800px] bg-white dark:bg-gray-700 h-screen p-5 border-l border-r border-gray-200 dark:border-slate-600">
+        <div className="container md:max-w-[800px] bg-white dark:bg-gray-700 p-5  md:border-l md:border-r border-gray-200 dark:border-slate-600">
           <div className="flex flex-col space-y-10">
             <div>
               <h1 className="text-2xl dark:text-white">About Us</h1>

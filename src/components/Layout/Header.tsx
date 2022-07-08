@@ -14,7 +14,7 @@ export default function Header() {
         <div className="inline-flex items-center w-[260px] pl-3">
           <Button/>
           <Link href="/" passHref>
-           <span className="overflow-hidden whitespace-nowrap block ml-1 text-gray-700 dark:text-white text-xl cursor-pointer">Medianext UI</span>
+           <span className="overflow-hidden whitespace-nowrap block ml-1 text-gray-700 dark:text-white dark:hover:text-blue-400 text-xl cursor-pointer hover:text-blue-600 ">Medianext UI</span>
           </Link>
         </div>
         <div className="px-6 inline-flex flex-1 items-center justify-between">

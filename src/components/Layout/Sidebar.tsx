@@ -1,6 +1,8 @@
 import dynamic from 'next/dynamic'
 import { useAtom } from 'jotai'
 import { sideNavToggle } from 'store'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { XIcon, MenuIcon, SearchIcon, UserIcon, UsersIcon, ChatAltIcon, MoonIcon, ChevronDownIcon, MenuAlt1Icon, NewspaperIcon } from '@heroicons/react/outline'
 import { FbIcon, FigmaIcon, GithubIcon, IgIcon, TwitchIcon, TwitterIcon } from '@/components/Icons'
 import { Dropdown, DropdownItem, DropdownList } from '@/components/Menu/Dropdown'
@@ -9,11 +11,19 @@ import { SinggleMenu, SinggleMenuItem } from '@/components/Menu/SinggleMenu'
 const ButtonPlus = dynamic(() => import('@/components/Button').then((mod) => mod.ButtonPlus), {ssr: false})
 
 export default function Sidebar() {
-    const [isExpand] = useAtom(sideNavToggle);
-    const expanWidthSidebar = !isExpand ? 'w-[260px]' : 'w-[70px]';
+    const [isExpand, setIsExpand] = useAtom(sideNavToggle);
+    const expanWidthSidebar = !isExpand ? 'w-[260px]' : 'w-0 md:w-[70px] -translate-x-full md:translate-x-0';
+    const router = useRouter()
+    useEffect(() => {
+      const handleRouteChange = (url, { shallow }) => {
+        setIsExpand(true)
+      }
+      router.events.on('routeChangeStart', handleRouteChange)
+     }, [])
+
 
     return (
-        <div className={`${expanWidthSidebar} bg-white dark:bg-slate-900 hidden transition-all duration-800 will-change-auto origin-left md:inline-flex flex-col justify-between border-r border-gray-200 dark:border-0 sticky top-0 overflow-x-hidden`}>
+        <div className={`${expanWidthSidebar} bg-white dark:bg-slate-900 transition-[width] transition-transform ease-out duration-600  will-change-auto inline-flex flex-col justify-between border-r border-gray-200 dark:border-slate-700 sticky top-0`}>
           <div className="overflow-y-auto overflow-x-hidden px-3 py-5">
             {/* Dropdown Menu */}
             <SinggleMenu devider>
