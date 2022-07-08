@@ -7,7 +7,7 @@ const DynamicHeader = dynamic(() => import('@/components/Layout/Header'))
 const DynamicContent = dynamic(() => import('@/components/Layout/Content'))
 
 const DynamicSidebar = dynamic(() => import('@/components/Layout/Sidebar'), {
-  ssr: false,
+  ssr: false
 })
 
 
