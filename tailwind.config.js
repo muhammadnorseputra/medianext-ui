@@ -9,7 +9,7 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '1rem',
+        DEFAULT: '10px',
         sm: '2rem',
         lg: '4rem',
         xl: '5rem',
@@ -19,5 +19,10 @@ module.exports = {
     extend: {
     },
   },
-  plugins: [],
+  variants: {
+    lineClamp: ['responsive', 'hover']
+  },
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

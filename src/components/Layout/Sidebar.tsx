@@ -12,14 +12,14 @@ const ButtonPlus = dynamic(() => import('@/components/Button').then((mod) => mod
 
 export default function Sidebar() {
     const [isExpand, setIsExpand] = useAtom(sideNavToggle);
-    const expanWidthSidebar = !isExpand ? 'w-[260px]' : 'w-0 md:w-[70px] -translate-x-full md:translate-x-0';
+    const expanWidthSidebar = !isExpand ? 'w-[240px]' : 'w-0 md:w-[60px] 2xl:w-[70px] -translate-x-full md:translate-x-0';
     const router = useRouter()
     useEffect(() => {
       const handleRouteChange = (url, { shallow }) => {
         setIsExpand(true)
       }
-      router.events.on('routeChangeStart', handleRouteChange)
-     }, [])
+      router.events.on('routeChangeComplete', handleRouteChange)
+     }, [router.events, setIsExpand])
 
 
     return (
@@ -53,20 +53,20 @@ export default function Sidebar() {
           {/* Sidebar Footer */}
           <div className={`inline-flex flex-col gap-y-3 ${isExpand ? 'h-[70px] p-3' : 'h-[100px] p-5'} border-t border-gray-200 dark:border-slate-800 dark:text-slate-200`}>
             {!isExpand ?  
-            (<><ul className="inline-flex items-center justify-around">
+            (<><ul className="inline-flex items-center justify-around text-xs 2xl:text-sm text-gray-400">
               <li><a href="#" className="hover:underline">Sitemap</a></li>
               &bull;
               <li><a href="#" className="hover:underline">Disclaimer</a></li>
               &bull;
               <li><a href="#" className="hover:underline">Privacy</a></li>
             </ul>
-            <ul className="inline-flex items-center justify-around hover:[&>li]:bg-slate-100 dark:hover:[&>li]:bg-slate-700">
-              <li className="p-2 rounded-full"><a href="#"><FbIcon/></a></li>
-              <li className="p-2 rounded-full"><a href="#"><FigmaIcon/></a></li>
-              <li className="p-2 rounded-full"><a href="#"><GithubIcon/></a></li>
-              <li className="p-2 rounded-full"><a href="#"><IgIcon/></a></li>
-              <li className="p-2 rounded-full"><a href="#"><TwitchIcon/></a></li>
-              <li className="p-2 rounded-full"><a href="#"><TwitterIcon/></a></li>
+            <ul className="inline-flex items-center justify-around 2xl:justify-between [&>li]:text-gray-600 hover:[&>li]:bg-slate-100 dark:hover:[&>li]:bg-slate-700">
+              <li className="p-2 rounded-full group"><a className="group-hover:text-blue-800" href="#"><FbIcon/></a></li>
+              <li className="p-2 rounded-full group"><a className="group-hover:text-violet-800" href="#"><FigmaIcon/></a></li>
+              <li className="p-2 rounded-full group"><a className="group-hover:text-black" href="#"><GithubIcon/></a></li>
+              <li className="p-2 rounded-full group"><a className="group-hover:text-red-800" href="#"><IgIcon/></a></li>
+              <li className="p-2 rounded-full group"><a className="group-hover:text-violet-600" href="#"><TwitchIcon/></a></li>
+              <li className="p-2 rounded-full group"><a className="group-hover:text-blue-600" href="#"><TwitterIcon/></a></li>
             </ul></>)
             : 
             <ButtonPlus/>

@@ -23,7 +23,7 @@ export default function Layout({ children }: TsContentType) {
 			{/* Header */}
       <DynamicHeader/>
       {/* Main */}
-      <main className="flex overflow-y-auto overflow-x-hidden h-[calc(100vh-120px)] md:h-[calc(100vh-60px)]">
+      <main className="flex overflow-y-auto overflow-x-hidden h-[calc(100vh-170px)] md:h-[calc(100vh-60px)]">
       {/* Sidebar */}
       <DynamicSidebar/>
       {/* Content */}

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "framer-motion": "^6.3.16",
     "jotai": "^1.7.3",
     "next": "12.2.0",
