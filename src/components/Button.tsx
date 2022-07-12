@@ -28,7 +28,7 @@ export const ButtonPlus = () => {
 	};
 	return (
 		<motion.div initial={{opacity: 0}} animate={{opacity: 1}}>
-			<button type="button" className="hidden md:block transition-all duration-800 origin-center p-2  2xl:p-4 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700 hover:rotate-180" onClick={() => toggle()}>
+			<button type="button" className="hidden md:block transition-all duration-800 origin-center p-2 2xl:p-4 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700 hover:rotate-180" onClick={() => toggle()}>
 				<PlusIcon className="w-5 h-5 text-gray-400"/>
 			</button>
 		</motion.div>

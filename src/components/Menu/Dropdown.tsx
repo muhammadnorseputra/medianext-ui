@@ -21,7 +21,7 @@ export const DropdownItem = ({ title, children, expand }: TsDropdownItem) => {
     setDropdownOpen(!dropdownOpen);
   };
 
-  const isExpand = !expand ? 'w-full rounded-xl' : 'rounded-full';
+  const isExpand = !expand ? 'w-full rounded-xl' : 'rounded-full -translate-x-20 md:-translate-x-0';
 
   return (
     <>

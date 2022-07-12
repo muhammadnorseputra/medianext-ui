@@ -14,13 +14,13 @@ export const SinggleMenu = ({ devider, children }: TsSinggleMenu) => {
 
 
 export const SinggleMenuItem = ({ title, icon, expand, href }: TsSinggleMenuItem) => {
-  const isExpandBlock = !expand ? 'inline-flex justify-start items-center block gap-x-2 w-full rounded-xl' : 'inline-block rounded-full';
+  const isExpandBlock = !expand ? 'inline-flex justify-start items-center block gap-x-2 w-full rounded-xl' : '-translate-x-20 md:-translate-x-0 block md:inline-block rounded-full';
   return (
     <>
       {/* Singgle Menu Items */}
       <li>
         <Link href={href}>
-          <a className={`${isExpandBlock} p-2 2xl:p-4 2xl:gap-x-3 whitespace-nowrap`}>
+          <a className={`${isExpandBlock} p-2 2xl:p-4 2xl:gap-x-3`}>
             { icon } {!expand ? <span>{ title }</span> : ''}
           </a>
         </Link>

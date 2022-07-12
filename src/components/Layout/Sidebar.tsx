@@ -23,8 +23,16 @@ export default function Sidebar() {
 
 
     return (
-        <div className={`${expanWidthSidebar} bg-white dark:bg-slate-900 transition-[width] transition-transform ease-out duration-600  will-change-auto inline-flex flex-col justify-between border-r border-gray-200 dark:border-slate-700 sticky top-0`}>
-          <div className="overflow-y-auto overflow-x-hidden px-3 py-5">
+        <>
+        {!isExpand && <div className="absolute inset-0 backdrop-blur bg-white/80 dark:bg-black/80 z-10 block md:hidden" onClick={() => setIsExpand(!isExpand)}></div>}
+        <nav id="sidebar" className={`${expanWidthSidebar} bg-white dark:bg-slate-900 inline-flex flex-col justify-between border-r border-gray-200 dark:border-gray-800 fixed top-0 md:top-[60px] z-10 h-full md:h-[calc(100vh-60px)] border-b border-gray-100 shadow`}>
+          <div className={`${expanWidthSidebar} overflow-y-auto overflow-x-hidden px-3 py-5`}>
+            <div className="block md:hidden flex items-center justify-between pb-2 mb-2 border-b border-gray-200 dark:border-gray-700">
+              <span className="text-lg font-bold">Medianext UI</span>
+              <button type="button" className="bg-white dark:bg-gray-800 inline-flex rounded-xl p-2" onClick={() => setIsExpand(!isExpand)}>
+                <XIcon className="w-5 h-5 text-gray-400"/>
+              </button>
+            </div>
             {/* Dropdown Menu */}
             <SinggleMenu devider>
               <SinggleMenuItem title="My Feeds" href="/" icon={<NewspaperIcon className="w-6 h-6 text-blue-400 stroke-2"/>} expand={isExpand}/>
@@ -72,6 +80,7 @@ export default function Sidebar() {
             <ButtonPlus/>
             } 
           </div>
-        </div>
+        </nav>
+     </>
     )
 }

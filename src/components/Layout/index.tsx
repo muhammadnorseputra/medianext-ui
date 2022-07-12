@@ -2,6 +2,8 @@ import dynamic from 'next/dynamic'
 import { TsContentType } from '@/utils/Interface'
 import { Suspense } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const DynamicHeader = dynamic(() => import('@/components/Layout/Header'))
 const DynamicContent = dynamic(() => import('@/components/Layout/Content'))
@@ -23,6 +25,7 @@ export default function Layout({ children }: TsContentType) {
 			{/* Header */}
       <DynamicHeader/>
       {/* Main */}
+      <PerfectScrollbar>
       <main className="flex overflow-y-auto overflow-x-hidden h-[calc(100vh-170px)] md:h-[calc(100vh-60px)]">
       {/* Sidebar */}
       <DynamicSidebar/>
@@ -34,6 +37,7 @@ export default function Layout({ children }: TsContentType) {
         </div>
       </DynamicContent>
       </main>
+      </PerfectScrollbar>
       <DynamicMobileMenu/>
 		</>
 	)

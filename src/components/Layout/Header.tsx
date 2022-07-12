@@ -10,7 +10,7 @@ const ButtonTheme = dynamic(() => import('@/components/ButtonTheme'), {ssr: fals
 
 export default function Header() {
 	return (
-	<header className="flex bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700 relative text-gray-800 dark:text-white h-[60px]">
+	<header className="flex bg-white dark:bg-slate-600 shadow border-b border-gray-200 dark:border-slate-700 relative text-gray-800 dark:text-white h-[60px]">
         <div className="inline-flex items-center w-[260px] pl-3">
           <Button/>
           <Link href="/" passHref>
