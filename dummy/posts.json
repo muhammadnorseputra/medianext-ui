@@ -14,7 +14,7 @@
 		{
 			"id": 2,
 			"title": "Section 1.10.32 of de Finibus Bonorum et Malorum, written by Cicero in 45 BC",
-			"isfeatured": true,
+			"isfeatured": false,
 			"summary": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
 			"cover": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0aWNsZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
 			"react": {
@@ -36,7 +36,7 @@
 		{
 			"id": 4,
 			"title": "Proin porta mi vitae nulla euismod, in molestie urna viverra.",
-			"isfeatured": false,
+			"isfeatured": true,
 			"summary": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
 			"cover": "https://images.unsplash.com/photo-1585241936939-be4099591252?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXJ0aWNsZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
 			"react": {

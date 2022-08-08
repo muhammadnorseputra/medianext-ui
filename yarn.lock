@@ -44,6 +44,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@headlessui/react@^1.6.6":
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.6.6.tgz#3073c066b85535c9d28783da0a4d9288b5354d0c"
+  integrity sha512-MFJtmj9Xh/hhBMhLccGbBoSk+sk61BlP6sJe4uQcVMtXZhCgGqd2GyIQzzmsdPdTEWGSF434CBi8mnhR6um46Q==
+
 "@heroicons/react@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-1.0.6.tgz#35dd26987228b39ef2316db3b1245c42eb19e324"
@@ -62,6 +67,11 @@
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
+
+"@juggle/resize-observer@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
+  integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
 
 "@next/env@12.2.0":
   version "12.2.0"
@@ -172,6 +182,13 @@
   integrity sha512-556Az0VX7WR6UdoTn4htt/l3zPQ7bsQWK+HqdG4swV7beUCxo/BqmvbOpUkTIm/9ih86LIf1qsUnywNL3obGHw==
   dependencies:
     tslib "^2.4.0"
+
+"@tailwindcss/forms@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.5.2.tgz#4ef45f9916dcb37838cbe7fecdcc4ba7a7c2ab59"
+  integrity sha512-pSrFeJB6Bg1Mrg9CdQW3+hqZXAKsBrSG9MAfFLKy1pVA4Mb4W7C0k7mEhlmS2Dfo/otxrQOET7NJiJ9RrS563w==
+  dependencies:
+    mini-svg-data-uri "^1.2.3"
 
 "@tailwindcss/line-clamp@^0.4.0":
   version "0.4.0"
@@ -460,6 +477,11 @@ camelcase-css@^2.0.1:
   resolved "https://registry.yarnpkg.com/camelcase-css/-/camelcase-css-2.0.1.tgz#ee978f6947914cc30c6b44741b6ed1df7f043fd5"
   integrity sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==
 
+can-use-dom@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/can-use-dom/-/can-use-dom-0.1.0.tgz#22cc4a34a0abc43950f42c6411024a3f6366b45a"
+  integrity sha512-ceOhN1DL7Y4O6M0j9ICgmTYziV89WMd96SvSl0REd8PMgrY0B/WBOPoed5S1KUmJqXgUXh8gzSe6E3ae27upsQ==
+
 caniuse-lite@^1.0.30001332, caniuse-lite@^1.0.30001335, caniuse-lite@^1.0.30001359:
   version "1.0.30001361"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001361.tgz#ba2adb2527566fb96f3ac7c67698ae7fc495a28d"
@@ -514,6 +536,11 @@ core-js-pure@^3.20.2:
   version "3.23.3"
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.23.3.tgz#bcd02d3d8ec68ad871ef50d5ccbb248ddb54f401"
   integrity sha512-XpoouuqIj4P+GWtdyV8ZO3/u4KftkeDVMfvp+308eGMhCrA3lVDSmAxO0c6GGOcmgVlaKDrgWVMo49h2ab/TDA==
+
+core-js@^3.0.1:
+  version "3.23.4"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.23.4.tgz#92d640faa7f48b90bbd5da239986602cfc402aa6"
+  integrity sha512-vjsKqRc1RyAJC3Ye2kYqgfdThb3zYnx9CrqoCcjMOENMtQPC7ZViBvlDxwYU/2z2NI/IPuiXw5mT4hWhddqjzQ==
 
 cross-spawn@^7.0.2:
   version "7.0.3"
@@ -1360,15 +1387,30 @@ lodash.castarray@^4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.castarray/-/lodash.castarray-4.4.0.tgz#c02513515e309daddd4c24c60cfddcf5976d9115"
   integrity sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
+
 lodash.isplainobject@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
   integrity sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==
 
+lodash.memoize@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
+  integrity sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==
+
 lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
 
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
@@ -1396,6 +1438,11 @@ micromatch@^4.0.4:
   dependencies:
     braces "^3.0.2"
     picomatch "^2.3.1"
+
+mini-svg-data-uri@^1.2.3:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz#8ab0aabcdf8c29ad5693ca595af19dd2ead09939"
+  integrity sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
 
 minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
@@ -1636,11 +1683,6 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-perfect-scrollbar@^1.5.0:
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/perfect-scrollbar/-/perfect-scrollbar-1.5.5.tgz#41a211a2fb52a7191eff301432134ea47052b27f"
-  integrity sha512-dzalfutyP3e/FOpdlhVryN4AJ5XDVauVWxybSkLZmakFE2sS3y3pc4JnSprw8tGmHvkaG5Edr5T7LBTZ+WWU2g==
-
 picocolors@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
@@ -1769,14 +1811,6 @@ react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-
-react-perfect-scrollbar@^1.5.8:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/react-perfect-scrollbar/-/react-perfect-scrollbar-1.5.8.tgz#380959387a325c5c9d0268afc08b3f73ed5b3078"
-  integrity sha512-bQ46m70gp/HJtiBOF3gRzBISSZn8FFGNxznTdmTG8AAwpxG1bJCyn7shrgjEvGSQ5FJEafVEiosY+ccER11OSA==
-  dependencies:
-    perfect-scrollbar "^1.5.0"
-    prop-types "^15.6.1"
 
 react-sticky-box@^1.0.2:
   version "1.0.2"
@@ -1916,6 +1950,26 @@ side-channel@^1.0.4:
     call-bind "^1.0.0"
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
+
+simplebar-react@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/simplebar-react/-/simplebar-react-2.4.1.tgz#f8c37064d1be52e53c1f62e199a02d9104aa290a"
+  integrity sha512-lw0ZPj+80ez2mh1YTOligFUNzDch2sUbOzDp4WUhU5SpS+qMiyyOzNfMbHa0l4FyWox+tnGNO7jybxqIda3roQ==
+  dependencies:
+    prop-types "^15.6.1"
+    simplebar "^5.3.8"
+
+simplebar@^5.3.8:
+  version "5.3.8"
+  resolved "https://registry.yarnpkg.com/simplebar/-/simplebar-5.3.8.tgz#4c133596780756a8170682d7fd8bfd23ea5220ab"
+  integrity sha512-LOHjyOcihx++zFN+vuktoZBGpCarFCtHIVDWXOf2VELbGDknq3Hw/sddafRp1aCg123VNkHWOFHUDHYEXAtufQ==
+  dependencies:
+    "@juggle/resize-observer" "^3.3.1"
+    can-use-dom "^0.1.0"
+    core-js "^3.0.1"
+    lodash.debounce "^4.0.8"
+    lodash.memoize "^4.1.2"
+    lodash.throttle "^4.1.1"
 
 slash@^3.0.0:
   version "3.0.0"

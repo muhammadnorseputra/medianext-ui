@@ -15,7 +15,7 @@ export default function Mobile() {
 				</li>
 				<li className="w-full text-center">
 					<Link href="/">
-					<a className="inline-flex flex-col justify-center items-center px-3 h-full p-2 rounded-full bg-blue-600">
+					<a className="inline-flex flex-col justify-center items-center px-3 h-full p-2 rounded-full bg-gray-900">
 						<HomeIcon className="w-6 h-6 text-white dark:text-white"/> <span className="text-xs text-white">Home</span>
 					</a>
 					</Link>

@@ -5,7 +5,7 @@ export const SinggleMenu = ({ devider, children }: TsSinggleMenu) => {
 	return (
 		<>
 			{/* Singgle Menu Container */}
-      <ul className={`${devider ? 'br' : '' } dark:[&>li>a]:text-slate-200 hover:[&>li>a]:bg-blue-100 dark:hover:[&>li>a]:bg-slate-700`}>
+      <ul className={`${devider ? 'br' : '' } dark:[&>li>a]:text-slate-200 hover:[&>li>a]:bg-blue-100 dark:hover:[&>li>a]:bg-slate-700 px-3`}>
         { children }
       </ul>
 		</>

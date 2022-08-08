@@ -2,27 +2,40 @@ import Image from 'next/image'
 import Shimmer from '@/components/Loading/shimmer'
 import toBase64 from '@/utils/tobase64'
 import shortenLargeNumber from '@/utils/numberformat'
-import { DotsVerticalIcon } from '@heroicons/react/outline'
+import { DotsVerticalIcon, ExclamationCircleIcon, BookmarkAltIcon, ShareIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
+import { useState } from 'react';
+import { ButtonOption as MenuOption } from '@/components/ButtonOption'
+function cn(...classes: string[]) {
+  return classes.filter(Boolean).join(' ');
+}
 
 export const CardArticleFeatured = ({title, cover, react}) => {
+  
+  const [isLoading, setLoading] = useState(true);
+
 	return (
-		<article className="relative w-full overflow-hidden rounded-xl shadow group">
+    <>
+		<article className="relative w-full bg-white shadow group xl:inline-flex xl:flex-row-reverse rounded-xl">
       {/* image */}
-      <div className="relative overflow-hidden aspect-video">
-      	<Image 
-          layout="fill" 
-          objectFit="cover" 
-          width="1100" 
-          height="500"
-          placeholder="blur" 
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(Shimmer(1100, 500))}`}
-          className="border-t-slate-400 border-b-slate-600 transition-transform group-hover:scale-105 duration-1000" 
-          alt={title} 
-          src={cover}/>
+      <div className="relative aspect-video">
+        <Link href="/singgle-post">
+        	<Image 
+            layout="fill" 
+            objectFit="cover"
+            className={cn(
+            'bg-gradient-to-t cursor-pointer from-gray-200 dark:from-gray-900 border-t-slate-400 border-b-slate-600 transition-transform group-hover:opacity-70 duration-800',
+              isLoading
+                ? 'grayscale blur-2xl scale-110'
+                : 'grayscale-0 blur-0 scale-100'
+            )}
+            onLoadingComplete={() => setLoading(false)}
+            alt={title} 
+            src={cover}/>
+        </Link>
       </div>
       {/* title */}
-      <div className="p-3 md:py-2 md:px-5 relatove bottom-0 left-0 bg-gradient-to-b from-transparent to-white dark:to-black w-full">
+      <div className="p-3 md:py-2 md:px-5 xl:pb-9 dark:bg-gray-900">
         <Link href="/singgle-post">
           <a className="text-blue-600 dark:text-white hover:text-blue-800">
             <h1 className="text-sm md:text-md xl:text-xl 2xl:text-2xl md:py-2 md:my-2 font-bold"><span>{title}</span></h1>
@@ -38,8 +51,6 @@ export const CardArticleFeatured = ({title, cover, react}) => {
               objectFit="cover" 
               width="25" 
               height="25"
-              placeholder="blur" 
-              blurDataURL={`data:image/svg+xml;base64,${toBase64(Shimmer(25, 25))}`}
               className="rounded-full" alt="Author Pic" 
               src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=80"/>
           </div>          
@@ -48,20 +59,19 @@ export const CardArticleFeatured = ({title, cover, react}) => {
             <br/>
             <span className="text-xs text-gray-400">{shortenLargeNumber(react.views,1)} Views &bull; {shortenLargeNumber(react.comments,1)} Comments</span>
           </div>
-          <div>
-            <button type="button" className="transition-color duration-600 p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full"> 
-              <DotsVerticalIcon className="w-5 h-5 text-gray-400" />
-            </button>
-          </div>
+          <MenuOption />
         </div>
       </div>
       {/* readmore */}
     </article> 
+    </>
 	)
 }
 
 export default function CardArticle({title, cover, react}) {
+  
 	return (
+    <>
     <Link href="/singgle-post">
     <a className="text-black dark:text-white hover:text-blue-600">
 		<article className="dark:text-white rounded-xl overflow-hidden shadow dark:shadow-none group h-full flex flex-col justify-between bg-white dark:bg-slate-600">
@@ -108,24 +118,30 @@ export default function CardArticle({title, cover, react}) {
     </article>    
     </a>
     </Link>
+    </>
 	)
 }
 
 export const CardArticlePopuler = ({title, cover, react}) => {
+  const [isLoading, setLoading] = useState(true);
   return (
     <Link href="/singgle-post">
     <a className="text-black dark:text-white hover:text-blue-800">
-    <article className="dark:text-white overflow-hidden group flex justify-between flex-row-reverse pb-2 border-b dark:border-gray-700 border-gray-200">
+    <article className="dark:text-white overflow-hidden group flex justify-between flex-row-reverse my-4">
       {/* cover */}
-      <div className="relative overflow-hidden rounded-xl my-3 max-w-[80px] max-h-[80px]">
+      <div className="relative overflow-hidden rounded-xl my-3 max-w-[80px] max-h-[80px] md:max-w-[100px] md:max-h-[100px] lg:max-w-[90px] lg:max-h-[90px]">
       <Image 
           layout="intrinsic" 
           objectFit="cover" 
           width="200" 
           height="200"
-          placeholder="blur" 
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(Shimmer(200, 200))}`}
-          className="transition-transform group-hover:opacity-70 duration-1000"
+          className={cn(
+            'bg-gradient-to-t from-gray-200 dark:from-gray-900 transition-transform ease-in-out duration-1000 group-hover:opacity-70',
+            isLoading
+              ? 'grayscale blur-2xl scale-110'
+              : 'grayscale-0 blur-0 scale-100'
+          )}
+          onLoadingComplete={() => setLoading(false)}
           alt={title} 
           src={cover}/>
       </div>
@@ -148,7 +164,7 @@ export const CardArticlePopuler = ({title, cover, react}) => {
           </div>
         </div>
         {/* title */}
-        <h1 className="text-sm md:text-xs xl:text-xs 2xl:text-xl mb-2 mr-3 font-bold tracking-wide line-clamp-2">{title}</h1>
+        <h1 className="text-sm md:text-lg lg:text-sm xl:text-sm 2xl:text-xl mb-2 mr-3 font-bold tracking-wide line-clamp-2">{title}</h1>
         {/*option */}
         <div className="inline-flex items-center justify-between w-full text-xs text-gray-600 dark:text-gray-400">
           <div>
@@ -169,20 +185,25 @@ export const CardArticlePopuler = ({title, cover, react}) => {
 }
 
 export const CardArticleLikeMedium = ({title, cover, summary, react}) => {
+  const [isLoading, setLoading] = useState(true);
   return (
     <Link href="/singgle-post">
     <a className="text-black dark:text-white hover:text-blue-800">
-    <article className="dark:text-white overflow-hidden group flex justify-between flex-row-reverse pb-2 border-b dark:border-gray-700 border-gray-200">
+    <article className="dark:text-white overflow-hidden group flex justify-between flex-row-reverse pt-5 pb-3">
       {/* cover */}
-      <div className="relative overflow-hidden rounded-xl my-3 max-w-[80px] max-h-[80px] md:max-w-[150px] md:max-h-[150px] 2xl:max-w-[120px] 2xl:max-h-[120px]">
+      <div className="relative overflow-hidden rounded-xl max-w-[90px] max-h-[90px] sm:max-w-[110px] sm:max-h-[110px] md:max-w-[150px] md:max-h-[150px] 2xl:max-w-[160px] 2xl:max-h-[160px]">
       <Image 
           layout="intrinsic" 
-          objectFit="cover" 
-          width="400" 
-          height="400"
-          placeholder="blur" 
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(Shimmer(400, 400))}`}
-          className="transition-transform group-hover:opacity-70 duration-1000 max-w-[400px] max-h-[400px]"
+          objectFit="cover"
+          width="400"
+          height="400" 
+          className={cn(
+            'bg-gradient-to-t from-gray-200 dark:from-gray-900 transition-colors ease-in-out duration-1000 group-hover:opacity-60 max-w-[400px] max-h-[400px]',
+            isLoading
+              ? 'grayscale blur-2xl scale-110'
+              : 'grayscale-0 blur-0 scale-100'
+          )}
+          onLoadingComplete={() => setLoading(false)}
           alt={title} 
           src={cover}/>
       </div>
@@ -205,7 +226,7 @@ export const CardArticleLikeMedium = ({title, cover, summary, react}) => {
           </div>
         </div>
         {/* title */}
-        <h1 className="text-sm md:text-md xl:text-xl 2xl:text-xl mb-2 mr-3 font-bold tracking-wide line-clamp-2">{title}</h1>
+        <h1 className="text-sm md:text-xl xl:text-xl 2xl:text-xl mb-2 mr-3 font-bold tracking-wide line-clamp-2">{title}</h1>
         {/* Summary */}
         <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 pr-5 line-clamp-2 md:line-clamp-3">
           {summary}
@@ -228,3 +249,4 @@ export const CardArticleLikeMedium = ({title, cover, summary, react}) => {
     </Link>
   )
 }
+

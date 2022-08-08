@@ -14,16 +14,23 @@ module.exports = {
         lg: '4rem',
         xl: '5rem',
         '2xl': '6rem',
-      },
+      }
     },
+    ripple: theme => ({
+        colors: theme('colors'),
+        modifierTransition: 'background 0.2s',
+        activeTransition: 'background 0.1s'
+    }),
     extend: {
     },
   },
   variants: {
     lineClamp: ['responsive', 'hover']
   },
+  
   plugins: [
     require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/typography')
+    require('@tailwindcss/typography'),
+    require('tailwindcss-ripple')()
   ],
 }
